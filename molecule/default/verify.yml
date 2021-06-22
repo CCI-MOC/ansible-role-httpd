@@ -1,0 +1,11 @@
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: check that httpd is installed
+    command: rpm -q httpd
+    register: httpd_check
+
+  - name: assert that httpd is installed
+    assert:
+      that: httpd_check is success

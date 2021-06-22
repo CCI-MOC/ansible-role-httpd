@@ -1,0 +1,5 @@
+- name: install httpd
+  become: true
+  package:
+    name: httpd
+    state: installed
